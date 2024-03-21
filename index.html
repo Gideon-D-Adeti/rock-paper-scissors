@@ -15,6 +15,28 @@
 
             return choices[randomIndex];
         }
+
+        function playRound(playerSelection, computerSelection) {
+            let playerChoice = playerSelection.toLowerCase();
+            let computerChoice = computerSelection.toLowerCase();
+
+            if (playerChoice === computerChoice) {
+                return "It's a tie!";
+            } else if (
+                (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                (playerChoice === 'paper' && computerChoice === 'rock') ||
+                (playerChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                return "You Win! " + playerChoice.capitalize() + " beats " + computerChoice.capitalize();
+            } else {
+                return "You Lose! " + computerChoice.capitalize() + " beats " + playerChoice.capitalize();
+            }
+        }
+
+        // Adding a capitalize method to String prototype to capitalize first letter
+        String.prototype.capitalize = function () {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        };
     </script>
 </body>
 
