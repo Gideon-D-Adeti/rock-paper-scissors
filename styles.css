@@ -1,0 +1,28 @@
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* General styling */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #333;
+    background-color: #f5f5ff;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    display: flex;
+    padding: 32px;
+}
+
+h1 {
+    margin: auto;
+}
