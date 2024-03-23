@@ -12,6 +12,11 @@ function displayResults() {
   resultsElement.innerHTML = ""; // Clear previous results
 
   let firstPElement = createPElement("Game Over!");
+  firstPElement.setAttribute(
+    "style",
+    "font-size: 24px; text-transform: uppercase;"
+  );
+
   let secondPElement = createPElement(`Player Score: ${playerScore}`);
   let thirdPElement = createPElement(`Computer Score: ${computerScore}`);
   let forthPElement = createPElement(`Tie Score: ${tieScore}`);
@@ -22,12 +27,17 @@ function displayResults() {
   resultsElement.appendChild(forthPElement);
 
   let fifthPElement = createPElement("");
+  fifthPElement.setAttribute("style", "font-size: 18px; font-weight: bold;");
+
   if (playerScore > computerScore) {
     fifthPElement.textContent = "Congratulations! You win the game!";
+    fifthPElement.setAttribute("style", "color: green;");
   } else if (computerScore > playerScore) {
     fifthPElement.textContent = "Sorry, you lose the game!";
+    fifthPElement.setAttribute("style", "color: red;");
   } else {
     fifthPElement.textContent = "It's a tie!";
+    fifthPElement.setAttribute("style", "color: blue;");
   }
   resultsElement.appendChild(fifthPElement);
 }
