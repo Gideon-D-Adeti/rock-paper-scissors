@@ -44,52 +44,6 @@
         String.prototype.capitalize = function () {
             return this.charAt(0).toUpperCase() + this.slice(1);
         };
-
-        // Function to play a five round game
-        function playGame() {
-            let playerScore = 0;
-            let computerScore = 0;
-            let tieScore = 0;
-
-            // Play five rounds
-            for (let i = 0; i < 5; i++) {
-                let playerSelection;
-                // Prompt the user for input and validate it
-                do {
-                    playerSelection = prompt("Enter your choice (rock, paper, or scissors):").toLowerCase();
-                } while (!['rock', 'paper', 'scissors'].includes(playerSelection));
-
-                // Get computer's choice
-                let computerSelection = getComputerChoice();
-
-                // Play the round
-                let result = playRound(playerSelection, computerSelection).toLowerCase();
-
-                // Update scores based on result
-                if (result.includes("win")) {
-                    playerScore++;
-                } else if (result.includes("lose")) {
-                    computerScore++;
-                } else {
-                    tieScore++;
-                }
-            }
-
-            // Display results
-            console.log("Game Over!");
-            console.log("Player Score: " + playerScore);
-            console.log("Computer Score: " + computerScore);
-            console.log("Tie Score: " + tieScore);
-
-            // Determine overall winner
-            if (playerScore > computerScore) {
-                console.log("Congratulations! You win the game!");
-            } else if (computerScore > playerScore) {
-                console.log("Sorry, you lose the game!");
-            } else {
-                console.log("It's a tie!");
-            }
-        }
     </script>
 </body>
 
