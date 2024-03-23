@@ -15,57 +15,8 @@
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
     </div>
-    <script>
-        let rockButton = document.querySelector("#rock");
-        let paperButton = document.querySelector("#paper");
-        let scissorsButton = document.querySelector("#scissors");
-
-        // Function to get computer's choice
-        function getComputerChoice() {
-            let choices = ['Rock', 'Paper', 'Scissors']
-            let randomIndex = Math.floor(Math.random() * 3)
-
-            return choices[randomIndex];
-        }
-
-        // Function to play a round of the game
-        function playRound(playerSelection, computerSelection) {
-            let playerChoice = playerSelection.toLowerCase();
-            let computerChoice = computerSelection.toLowerCase();
-
-            // Check if it's a tie
-            if (playerChoice === computerChoice) {
-                return "It's a tie!";
-            } else if (
-                // Check if player wins
-                (playerChoice === 'rock' && computerChoice === 'scissors') ||
-                (playerChoice === 'paper' && computerChoice === 'rock') ||
-                (playerChoice === 'scissors' && computerChoice === 'paper')
-            ) {
-                return "You Win! " + playerChoice.capitalize() + " beats " + computerChoice.capitalize();
-            } else {
-                // If player doesn't win, computer wins
-                return "You Lose! " + computerChoice.capitalize() + " beats " + playerChoice.capitalize();
-            }
-        }
-
-        // Adding a capitalize method to String prototype to capitalize first letter
-        String.prototype.capitalize = function () {
-            return this.charAt(0).toUpperCase() + this.slice(1);
-        };
-
-        rockButton.addEventListener("click", () => {
-            console.log(playRound('Rock', getComputerChoice()));
-        });
-
-        paperButton.addEventListener("click", () => {
-            console.log(playRound('Paper', getComputerChoice()));
-        });
-
-        scissorsButton.addEventListener("click", () => {
-            console.log(playRound('Scissors', getComputerChoice()));
-        })
-    </script>
+    <div class="results"></div>
+    <script src="script.js"></script>
 </body>
 
 </html>
