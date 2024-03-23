@@ -10,7 +10,16 @@
 
 <body>
     <h1>Rock Paper Scissors</h1>
+    <div class="buttons-container">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
     <script>
+        let rockButton = document.querySelector("#rock");
+        let paperButton = document.querySelector("#paper");
+        let scissorsButton = document.querySelector("#scissors");
+
         // Function to get computer's choice
         function getComputerChoice() {
             let choices = ['Rock', 'Paper', 'Scissors']
@@ -44,6 +53,18 @@
         String.prototype.capitalize = function () {
             return this.charAt(0).toUpperCase() + this.slice(1);
         };
+
+        rockButton.addEventListener("click", () => {
+            console.log(playRound('Rock', getComputerChoice()));
+        });
+
+        paperButton.addEventListener("click", () => {
+            console.log(playRound('Paper', getComputerChoice()));
+        });
+
+        scissorsButton.addEventListener("click", () => {
+            console.log(playRound('Scissors', getComputerChoice()));
+        })
     </script>
 </body>
 
